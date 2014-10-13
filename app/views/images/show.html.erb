@@ -1,0 +1,21 @@
+<h1> <%= @image.name %> </h1>
+<h3> <%= @image.description %> </h3>
+
+<%= link_to user_path(@image.user.id) do %>
+  <h3> Uploaded by <%= @image.user.email %> </h3>
+<% end %>
+
+<div>
+  <%= link_to "Edit this image", edit_gallery_image_path(@gallery, @image) %>
+</div>
+
+<img src="<%= @image.url %>"
+
+<div>
+  <%= link_to "Delete this image", gallery_image_path(@gallery, @image), method: :delete, data: {confirm: "Are you sure?"} %>
+</div>
+
+<div>
+  <%= link_to "Return to gallery home", gallery_path(@gallery) %>
+</div>
+

@@ -1,0 +1,17 @@
+<%= form_for gallery do |form| %>
+  <%= render "application/form_errors", object: gallery %>
+
+  <div>
+    <%= form.label :name, "Gallery Name:" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div> 
+    <%= form.label :description, "Gallery Description:" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
