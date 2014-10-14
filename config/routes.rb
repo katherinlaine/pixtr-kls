@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   resources :galleries do
     resources :images, except: [:index]
   end
+
+  resources :images, only: [] do
+    resources :comments, only: [:create]
+  end
 end

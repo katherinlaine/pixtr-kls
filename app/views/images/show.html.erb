@@ -12,6 +12,18 @@
 <img src="<%= @image.url %>"
 
 <div>
+<%= form_for([@image, @comment]) do |f| %>
+  <%= f.label :content, "Comment:"%>
+  <%= f.text_area :content %>
+  <%= f.submit %>
+<% end %>
+</div>
+
+<div>
+  <%= render @image.comments.by_most_recent %>
+</div>
+
+<div>
   <%= link_to "Delete this image", gallery_image_path(@gallery, @image), method: :delete, data: {confirm: "Are you sure?"} %>
 </div>
 
