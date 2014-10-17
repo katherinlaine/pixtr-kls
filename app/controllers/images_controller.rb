@@ -48,6 +48,6 @@ class ImagesController < ApplicationController
   private
 
   def image_params
-    params.require(:image).permit(:name, :description, :url)
+    params.require(:image).permit(:name, :description, :url, :tag_list, group_ids:[])
   end
 end

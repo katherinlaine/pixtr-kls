@@ -1,0 +1,29 @@
+<h1>Welcome, <%= @user.email %>!</h1>
+
+<p><%= link_to "Galleries", galleries_path %></p>
+<p><%= link_to "Groups", groups_path %></p>
+
+
+
+<h2>Your groups:</h2>
+
+<ul>
+  <% @user.groups.each do |group| %>
+    <li><%= link_to group.name, group %></li>
+  <% end %>
+</ul>
+
+<h2>Your Likes:</h2>
+
+<ul>
+  <% @user.liked_images.each do |liked_image| %>
+    <li><%= link_to liked_image.name, gallery_image_path(liked_image.gallery, liked_image) %></li>
+  <% end %>
+</ul>
+
+
+<h2>Your images:</h2>
+
+<% @user.images.each do |image| %>
+  <%= image_tag image.url, width: "300" %>
+<% end %>
