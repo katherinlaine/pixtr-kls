@@ -1,5 +1,6 @@
 class TagsController < ApplicationController
   def show
-    @tag = Tag.find(params[:id])
+    @tag = params[:id]
+    @images = Image.tagged_with(@tag)
   end
 end

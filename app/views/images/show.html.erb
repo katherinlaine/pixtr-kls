@@ -14,7 +14,7 @@
 <div>
   <ul>
   <% @image.tags.each do |tag| %>
-    <li><%= link_to tag.name, tag_path(tag) %></li>
+    <li><%= link_to tag.name, tag_path(tag.name) %></li>
   <% end %>
 </ul>
 </div>
